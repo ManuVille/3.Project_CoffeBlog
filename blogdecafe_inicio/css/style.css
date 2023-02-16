@@ -55,7 +55,7 @@ h4 {
 }
 
 img {
-    max-width: 100%;
+    max-width: 100%; /*hace responsibas las imagenes*/
 }
 
 /*utilidades*/
@@ -161,6 +161,7 @@ img {
     text-transform: uppercase; /*volvemos mayuscula la letra*/
     font-weight: 700;/*Negritas*/
     margin-bottom: 2rem;
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -168,6 +169,10 @@ img {
         display: inline-block;
 
     }
+}
+
+.boton:hover{
+    cursor: pointer;
 }
 
 .boton--primario{
@@ -220,4 +225,68 @@ img {
     .sobre-nosotros__texto{
         flex-basis: calc(50% - 1rem); /*repartes espacio ya asignado a los selectores*/
     }
+}
+
+/*cursos*/
+
+.curso {
+    padding: 3rem;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr; /*coloca ;la imagen detras de la descripcion*/
+        column-gap: 2rem; /*separar la imagen de la descripcion*/
+    }
+}
+.curso:last-of-type {
+    border: none;
+}
+.curso__label{
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.curso__info{
+    font-weight: normal;
+}
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+
+/*contacto*/
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);/*imagen de fondo*/
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto; /*colocamos el formulario debajo de la imagen necimada*/
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label{
+    flex: 0 0 9rem; /*alinea los labels del formulario*/
+    text-align: right;
+    padding-right: 2rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.campo__field{
+    flex: 1 ; /*cubre todo el espacio asigando*/
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea{
+height: 20rem;
 }
